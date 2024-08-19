@@ -13,7 +13,7 @@ export default function Login() {
                             Sign in to access your account
                         </p>
                     </div>
-                    <form 
+                    <form onSubmit={handleSubmit}
                         
                         className='space-y-6 ng-untouched ng-pristine ng-valid'
                     >
@@ -53,7 +53,7 @@ export default function Login() {
 
                         <div>
                             <button
-          
+                                disabled={loading}
                                 type='submit'
                                 className='bg-rose-500 w-full rounded-md py-3 text-white'
                             >
