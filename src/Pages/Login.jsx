@@ -1,7 +1,59 @@
-
+import toast from "react-hot-toast";
+import useAuth from "../Hooks/useAuth";
+import { FcGoogle } from "react-icons/fc";
+import { Link, useNavigate } from "react-router-dom";
+import { TbFidgetSpinner } from "react-icons/tb";
 
 export default function Login() {
 
+    const navigate = useNavigate();
+    const { signInWithGoogle, signIn,loading,setLoading } = useAuth();
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+
+
+
+        try {
+            setLoading(true)
+            // 1. sign in user
+            await signIn(email, password)
+      
+      
+            navigate('/')
+            toast.success('Login Succesfully')
+      
+      
+          }
+          catch (err) {
+            console.log(err);
+            toast.error(err.message)
+            setLoading(false)
+          }
+      
+      
+        }
+
+
+
+    const handleGoogleSignIn = async () => {
+        try {
+
+            await signInWithGoogle();
+            navigate('/')
+            toast.success('Login succesfully')
+
+
+        } catch (err) {
+            console.log(err);
+            toast.error(err.message)
+
+        }
+
+    }
 
     return (
         <div>
