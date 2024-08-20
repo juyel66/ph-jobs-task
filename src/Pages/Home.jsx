@@ -82,8 +82,8 @@ export default function Home() {
             <div className="block cursor-pointer p-4 font-bold">
               <Link to="/">
                 <img
-                  className="flex items-center"
-                  src="https://i.ibb.co/5L8tWX5/logo.png"
+                  className="flex items-center rounded-xl h-12 w-28"
+                  src="https://i.ibb.co/FW0xGMs/images.png"
                   alt="logo"
                   width="100"
                   height="100"
@@ -109,7 +109,8 @@ export default function Home() {
               <div className="w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-rose-100 mx-auto">
                 <Link to="/">
                   <img
-                    src="https://i.ibb.co/5L8tWX5/logo.png"
+                  className='rounded-xl h-16 w-48'
+                    src="https://i.ibb.co/FW0xGMs/images.png"
                     alt="logo"
                     width="100"
                     height="100"
