@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { TbFidgetSpinner } from "react-icons/tb";
 import { FcGoogle } from "react-icons/fc";
+import Swal from "sweetalert2";
 
 
 export default function SignUp() {
@@ -37,7 +38,13 @@ export default function SignUp() {
 
       await updateUserProfile(name, data.data.display_url)
       navigate('/')
-      toast.success('sign up succesfully')
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Sign up Successful",
+        showConfirmButton: false,
+        timer: 1500
+      });
 
 
     } catch (err) {
@@ -57,7 +64,13 @@ export default function SignUp() {
       
       await signInWithGoogle();
       navigate('/')
-      toast.success('sign up succesfully')
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Login Successful",
+        showConfirmButton: false,
+        timer: 1500
+      });
 
 
     } catch (err) {

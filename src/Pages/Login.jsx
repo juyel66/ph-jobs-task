@@ -3,6 +3,7 @@ import useAuth from "../Hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { TbFidgetSpinner } from "react-icons/tb";
+import Swal from "sweetalert2";
 
 export default function Login() {
 
@@ -24,7 +25,13 @@ export default function Login() {
       
       
             navigate('/')
-            toast.success('Login Succesfully')
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Login Successful",
+                showConfirmButton: false,
+                timer: 1500
+              });
       
       
           }
@@ -44,7 +51,13 @@ export default function Login() {
 
             await signInWithGoogle();
             navigate('/')
-            toast.success('Login succesfully')
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Login Successful",
+                showConfirmButton: false,
+                timer: 1500
+              });
 
 
         } catch (err) {
@@ -137,7 +150,7 @@ export default function Login() {
                             to='/signup'
                             className='hover:underline hover:text-rose-500 text-gray-600'
                         >
-                            Sign In
+                            Sign Up
                         </Link>
                         .
                     </p>
