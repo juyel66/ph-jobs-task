@@ -15,13 +15,14 @@ import AuthProvider from './Providers/AuthProvider';
 import SignUp from './Pages/SignUp';
 import Login from './Pages/Login';
 import Aos from 'aos';
+import PrivetRout from './PrivetRout';
 const queryClient = new QueryClient()
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>,
+    element: <PrivetRout><Home></Home></PrivetRout>,
   },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <SignUp /> },
